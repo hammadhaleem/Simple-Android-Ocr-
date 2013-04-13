@@ -1,12 +1,10 @@
 package com.example.photo;
 
 import java.io.File;
-import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
-import java.util.zip.GZIPInputStream;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -29,8 +27,7 @@ import com.googlecode.tesseract.android.TessBaseAPI;
 
 public class MainActivity extends Activity {
 	public static final String PACKAGE_NAME = "com.example.photo";
-	public static final String DATA_PATH = Environment
-			.getExternalStorageDirectory().toString() + "/photo/";
+	public static final String DATA_PATH = Environment.getExternalStorageDirectory().toString() + "/photo/";
 	
 
 	public static final String lang = "eng";
@@ -55,7 +52,7 @@ public class MainActivity extends Activity {
 			if (!dir.exists()) {
 				if (!dir.mkdirs()) {
 					Log.v(TAG, "ERROR: Creation of directory " + path + " on sdcard failed");
-					System.exit(0);
+					///System.exit(0);
 					return;
 				} else {
 					Log.v(TAG, "Created directory " + path + " on sdcard");
@@ -93,10 +90,10 @@ public class MainActivity extends Activity {
 		super.onCreate(savedInstanceState);
 
 		setContentView(R.layout.activity_main);
-
-		// _image = (ImageView) findViewById(R.id.image);
-		_field = (EditText) findViewById(R.id.textView1);
-		_button = (Button) findViewById(R.id.button1);
+		_button = (Button) findViewById(R.id.button);
+		_image = (ImageView) findViewById(R.id.imageView1);
+		_field = (EditText) findViewById(R.id.field);
+		
 		_button.setOnClickListener(new ButtonClickHandler());
 		
 		_path = DATA_PATH + "/ocr.jpg";
@@ -225,7 +222,6 @@ public class MainActivity extends Activity {
 			_field.setSelection(_field.getText().toString().length());
 		}
 		
-		// Cycle done.
 	}
 	
 	

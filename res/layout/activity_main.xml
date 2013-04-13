@@ -8,29 +8,32 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".MainActivity" >
 
-    <TextView
-        android:id="@+id/textView1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignRight="@+id/imageView1"
-        android:text="Click the image " />
+     <Button
+         android:id="@+id/button"
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:text="@string/button_text" />
 
-    <Button
-        android:id="@+id/button1"
-        android:layout_width="wrap_content"
+    <EditText
+        android:id="@+id/field"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/button"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="19dp"
-        android:text="Click to see the action" />
+        android:layout_marginBottom="26dp"
+        android:ems="10"
+        android:hint="@string/text_hint" >
+
+        <requestFocus />
+    </EditText>
 
     <ImageView
         android:id="@+id/imageView1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/button1"
+        android:layout_above="@+id/field"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="53dp"
+        android:layout_marginBottom="20dp"
         android:src="@drawable/ic_launcher" />
 
 </RelativeLayout>
