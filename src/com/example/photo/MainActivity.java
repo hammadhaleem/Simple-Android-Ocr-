@@ -18,8 +18,9 @@ import android.widget.EditText;
 import android.widget.ImageView;
 
 
-public class MainActivity extends PhotoPicker {
+public class MainActivity extends Tess_ocr {
 	private String _path ;
+	public static int RESULT_LOAD_IMAGE = 1;
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 
@@ -64,24 +65,16 @@ public class MainActivity extends PhotoPicker {
 		_button = (Button) findViewById(R.id.button);
 		_image = (ImageView) findViewById(R.id.imageView1);
 		_field = (EditText) findViewById(R.id.field);
+		button1 = (Button)findViewById(R.id.button1);
 		_button.setOnClickListener(new ButtonClickHandler());
 		_path = DATA_PATH + "/ocr.jpg";
+		
+		
 
-		Button buttonLoadImage = (Button) findViewById(R.id.button1);
-        buttonLoadImage.setOnClickListener(new View.OnClickListener() {
-             
-            @Override
-            public void onClick(View arg0) {
-                 
-                Intent i = new Intent(
-                        Intent.ACTION_PICK,
-                        android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
-                 
-                startActivityForResult(i, RESULT_LOAD_IMAGE);
-            }
-        });
+		
+		
 	}
-
+	
 	public class ButtonClickHandler implements View.OnClickListener {
 		public void onClick(View view) {
 			Log.v(TAG, "Starting Camera app");
