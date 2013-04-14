@@ -12,7 +12,17 @@
          android:id="@+id/button"
          android:layout_width="match_parent"
          android:layout_height="wrap_content"
+         android:layout_toLeftOf="@+id/imageView1"
          android:text="@string/button_text" />
+
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@+id/button"
+        android:layout_toRightOf="@+id/imageView1"
+        android:text="@string/select" />
 
     <EditText
         android:id="@+id/field"
@@ -20,12 +30,8 @@
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/button"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="26dp"
         android:ems="10"
-        android:hint="@string/text_hint" >
-
-        <requestFocus />
-    </EditText>
+        android:hint="@string/text_hint" />
 
     <ImageView
         android:id="@+id/imageView1"
@@ -33,7 +39,8 @@
         android:layout_height="wrap_content"
         android:layout_above="@+id/field"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="20dp"
+        android:layout_marginBottom="26dp"
+        android:contentDescription="@string/img_des"
         android:src="@drawable/ic_launcher" />
 
 </RelativeLayout>
